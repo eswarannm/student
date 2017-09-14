@@ -37,7 +37,7 @@ def students_able_to_drive(ages, students)
 	return answer
 end
 
-print students_able_to_drive(ages, students), "\n"
+#print students_able_to_drive(ages, students), "\n"
 
 
 def girls_with_green_eyes(students, eye_colors)
@@ -59,32 +59,47 @@ def girls_with_green_eyes(students, eye_colors)
 	return girls_with_green_eyes
 end
 
-print girls_with_green_eyes(students, eye_colors)
-
-
-def vowels_sophomore (age, students)
-	sophomore = []
-	vowels_sophomore = []
-	ages.each_with_index do |age, i|
-		if age == 15
-			sophomore.push(students[i]) 
-		end
-	end
-	
-	vowels_sophomore.each_with_index do |students, i|
-		student_letters = sophomore[i].chars.each_with_index
-		vowels = 0
-		if student_letters == a || student_letters == e || student_letters == i || student_letters == o || student_letters == u
-		vowels += 1
-		end
-
-	end
-
-	return vowels_sophomore
+#print girls_with_green_eyes(students, eye_colors)
+def vowel_counter (students)
+	numbers_of_vowels = 0
+	students.chars.each_with_index do |letter|
+		if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
+			numbers_of_vowels += 1
+	 	end
+ 	end
+ 	return numbers_of_vowels
 end
 
-print vowels_sophomore (age, students)
+def vowels_sophomore (ages, students)
+	most_vowels = ""
+	sophomore = []
+	ages.each_with_index do |age, i|
+		if age == 15 
+			sophomore.push(students[i])
+		end
+	end
 
-#print students, "\n"
-#print eye_colors, "\n"
-#print ages, "\n"
+	sophomore.each do |sophomore, i|
+		if vowel_counter(sophomore) > vowel_counter(most_vowels)
+			most_vowels = sophomore
+		end
+	end
+
+	return most_vowels
+end
+
+#print vowels_sophomore(ages, students)
+
+#def average_age_green_eyed (eye_colors, ages)
+#	peps_with_green_eyes = []
+#	poeple = 0
+#	peps_with_green_eyes.each_with_index do |eye_color, i|
+#		if eye_color == "Green"
+#			peps_with_green_eyes.push(ages[i])
+#			people += 1
+#		end
+#	end
+#	total_age = 0
+#	average_age = 0
+#	average_age.each_with_index do |ages|
+#		average_age =
