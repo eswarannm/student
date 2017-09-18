@@ -24,7 +24,7 @@ end
 
 
 
-puts students_with_brown_eyes(eye_colors)
+#puts students_with_brown_eyes(eye_colors)
 
 def students_able_to_drive(ages, students)
 	answer = []
@@ -90,16 +90,32 @@ end
 
 #print vowels_sophomore(ages, students)
 
-#def average_age_green_eyed (eye_colors, ages)
-#	peps_with_green_eyes = []
-#	poeple = 0
-#	peps_with_green_eyes.each_with_index do |eye_color, i|
-#		if eye_color == "Green"
-#			peps_with_green_eyes.push(ages[i])
-#			people += 1
-#		end
-#	end
-#	total_age = 0
-#	average_age = 0
-#	average_age.each_with_index do |ages|
-#		average_age =
+
+def average_age_green_eyes(eye_colors, ages)
+	peps_with_green_eyes = []
+	total_age = 0
+	people = 0
+	average_age = 0
+	eye_colors.each_with_index do |eye_color, i|
+		if eye_color == "Green"
+			peps_with_green_eyes.push(ages[i])
+			people += 1
+		end
+	end
+	puts people
+
+	peps_with_green_eyes.each_with_index do |age, i|
+		total_age += age
+	end
+	puts total_age
+	average_age = total_age / people 
+
+	return average_age
+end
+
+puts average_age_green_eyes(eye_colors, ages)
+
+def green_closest_average(average_age, ages)
+	average_age = 
+	green_closest_average	
+end
