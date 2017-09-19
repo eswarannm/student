@@ -102,20 +102,57 @@ def average_age_green_eyes(eye_colors, ages)
 			people += 1
 		end
 	end
-	puts people
 
 	peps_with_green_eyes.each_with_index do |age, i|
 		total_age += age
 	end
-	puts total_age
+
 	average_age = total_age / people 
 
 	return average_age
 end
 
-puts average_age_green_eyes(eye_colors, ages)
+#puts average_age_green_eyes(eye_colors, ages)
 
-def green_closest_average(average_age, ages)
-	average_age = 
-	green_closest_average	
+def green_closest_average(eye_colors, students, ages)
+	names_with_green_eyes = []
+	ages_with_green_eyes = []
+	names_closest_average = []
+	difference_in_age = []
+	total_age = 0
+	people = 0
+	average_age = 0
+	difference_of_age = 0
+
+	eye_colors.each_with_index do |eye_color, i|
+		if eye_color == "Green"
+			names_with_green_eyes.push(students[i])
+			ages_with_green_eyes.push(ages[i])
+			people += 1
+		end
+	end 
+
+	ages_with_green_eyes.each_with_index do |age, i|
+		total_age += age
+	end
+
+	average_age = total_age / people
+
+	ages_with_green_eyes.each_with_index do |age, i|
+		average_age - age = difference_of_age
+		difference_in_age.push(difference_of_age[i])
+	end
+
+	difference_of_age.each_with_index do |student, i|
+		if difference_of_age == 1.abs
+			names_closest_average.push(student[i])
+		end
+	end
+
+	return names_closest_average
+
 end
+
+print green_closest_average(eye_colors, students, ages)
+
+
