@@ -114,6 +114,7 @@ end
 
 #puts average_age_green_eyes(eye_colors, ages)
 
+
 def green_closest_average(eye_colors, students, ages)
 	names_with_green_eyes = []
 	ages_with_green_eyes = []
@@ -123,6 +124,7 @@ def green_closest_average(eye_colors, students, ages)
 	people = 0
 	average_age = 0
 	difference_of_age = 0
+	green_name = []
 
 	eye_colors.each_with_index do |eye_color, i|
 		if eye_color == "Green"
@@ -132,27 +134,46 @@ def green_closest_average(eye_colors, students, ages)
 		end
 	end 
 
-	ages_with_green_eyes.each_with_index do |age, i|
-		total_age += age
+	ages_with_green_eyes.each_with_index do |ages_with_green_eyes, names_with_green_eyes, i|
+
+		total_age += ages_with_green_eyes
+
+
 	end
+		
+		average_age = total_age / people
 
-	average_age = total_age / people
+#Fix the loop below and it will work:
+	green_name.each_with_index do |ages_with_green_eyes, names_with_green_eyes, i|
 
-	ages_with_green_eyes.each_with_index do |age, i|
-		average_age - age = difference_of_age
-		difference_in_age.push(difference_of_age[i])
-	end
+		if ages_with_green_eyes == 15
 
-	difference_of_age.each_with_index do |student, i|
-		if difference_of_age == 1.abs
-			names_closest_average.push(student[i])
+			green_name.push(names_with_green_eyes[i])
+
+			print green_name.names_with_green_eyes[i]
 		end
+
+			
 	end
 
-	return names_closest_average
+	print green_name
+
 
 end
 
 print green_closest_average(eye_colors, students, ages)
+
+
+
+
+def blood_donors(blood_types, students)
+	type_AB = []
+	type_A = []
+	type_B = []
+	type_O = []
+
+	students.each_with_index 
+
+end
 
 
