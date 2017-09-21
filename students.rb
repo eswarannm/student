@@ -175,8 +175,17 @@ def blood_donors(blood_types, students)
 	type_B = []
 	type_O = []
 
-	students.each_with_index 
+	students.each_with_index do |students, blood_types, i|
+		if blood_types == "AB"
+			type_AB.push(students, i)
+		end
+	end
+
+	return type_AB
 
 end
+
+print blood_donors(blood_types,students)
+
 
 
