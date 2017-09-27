@@ -119,73 +119,92 @@ end
 
 
 def green_closest_average(eye_colors, students, ages)
-	names_with_green_eyes = []
-	ages_with_green_eyes = []
-	names_closest_average = []
-	difference_in_age = []
-	total_age = 0
-	people = 0
-	average_age = 0
-	difference_of_age = 0
-	green_name = []
-
-	eye_colors.each_with_index do |eye_color, i|
-		if eye_color == "Green"
-			names_with_green_eyes.push(students[i])
-			ages_with_green_eyes.push(ages[i])
-			people += 1
+	average = 15
+	distance_to_average = 150
+	student = ""
+	eye_colors.each_with_index do |color, i|
+		distance_to_age = (ages[i] - average).abs
+		if color == "Green"	
+			if distance_to_age < distance_to_average
+				distance_to_average = distance_to_age
+				student = students[i]
+			end
 		end
-	end 
-
-	ages_with_green_eyes.each_with_index do |ages_with_green_eyes, names_with_green_eyes, i|
-
-		total_age += ages_with_green_eyes
-
-
 	end
-		
-		average_age = total_age / people
+	return student
+end
 
-#Fix the loop below and it will work:
-	green_name.each_with_index do |ages_with_green_eyes, names_with_green_eyes, i|
+#print green_closest_average(eye_colors, students, ages)
 
-		if ages_with_green_eyes == 15
-
-			green_name.push(names_with_green_eyes[i])
-
-			print green_name.names_with_green_eyes[i]
+def in_array(array, check_value)
+	array.each do |value|
+		if value == check_value
+			return true
 		end
-
-			
 	end
 
-	print green_name
-
+	return false
 
 end
 
-print green_closest_average(eye_colors, students, ages)
+def blood_donors(blood_types, students, student_needing_blood)
+
+	donors = []
+	student_blood_types = ""
 
 
-
-
-def blood_donors(blood_types, students)
-	type_AB = []
-	type_A = []
-	type_B = []
-	type_O = []
-
-	students.each_with_index do |students, blood_types, i|
-		if blood_types == "AB"
-			type_AB.push(students, i)
+	students.each_with_index do |student, i|
+		if student == student_needing_blood
+			student_blood_types = blood_types[i]
 		end
 	end
 
-	return type_AB
 
+
+ 	donatable_blood = []
+	if student_blood_types == "A"
+   		donatable_blood = ["A", "AB"]
+    elsif student_blood_types == "B"
+   		donatable_blood = ["B", "AB"]
+    elsif student_blood_types == "AB"
+    	donatable_blood = ["AB"]
+    elsif student_blood_types == "O"
+   		donatable_blood = ["A", "B", "AB", "O"]
+	end  
+
+
+	blood_types.each_with_index do |blood_type, i|
+	 	 if in_array(donatable_blood, blood_type)
+	 	 		donors.push(students[i])
+	 	 end
+	end
+ 
+ 	return donors
 end
 
-print blood_donors(blood_types,students)
+
+print blood_donors(blood_types,students, "Carol")
 
 
+def most_donors(students, blood_types, i)
+ 	 most_donor = []
+ 	 max_donors = 0
+ 
+ 	students.each_with_index do |students, i|
+ 	 	if students == student
+   	     	student_blood_type = blood_types[i]
+     	end
+ 	end
 
+ 	if student_blood_type == "O"
+  		most_donor.push(students[i])
+	end
+
+	if student_blood_type !== "O"
+		if student_blood_type == "A"
+			most_donor.push(students[i])
+		end
+	end
+
+	return most_donor
+end
