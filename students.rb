@@ -147,10 +147,8 @@ def in_array(array, check_value)
 end
 
 def blood_donors(blood_types, students, student_needing_blood)
-
 	donors = []
 	student_blood_types = ""
-
 
 	students.each_with_index do |student, i|
 		if student == student_needing_blood
@@ -194,21 +192,15 @@ def most_blood(students, blood_types)
 	students.each_with_index do |student_name, i|
 
 		donors = blood_donors(students, blood_types, student_name)
-
 		if donors.length > most_donors
 			most_donors = donors.length
 			highest_donor = student_name
 		end
 	end
-
 	highest_donors.push(highest_donor)
-
 	students.each_with_index do |student_name, i|
-
 		donors = blood_donors(students, blood_types, student_name)
-
 		if donors.length == most_donors
-
 			if student_name != highest_donor
 				highest_donors.push(student_name)
 			end
@@ -216,7 +208,6 @@ def most_blood(students, blood_types)
 	end
 	return highest_donors, max_donors
 end
-
 print most_blood(students, blood_types)
 
 
